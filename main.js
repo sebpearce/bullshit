@@ -1,4 +1,13 @@
+/*
+ * main.js
+ * 
+ * New Age Bullshit Generator
+ * © 2014 Seb Pearce (sebpearce.com)
+ * Licensed under the MIT License.
+ * 
+ */
 
+// deepCopy function taken from:
 // http://james.padolsey.com/javascript/deep-copying-of-objects-and-arrays/
 function deepCopy(obj) {
     if (Object.prototype.toString.call(obj) === '[object Array]') {
@@ -86,31 +95,6 @@ function generateSentence(topic) {
 
   for (var x in pattern) {
 
-/*
-nCosmos
-nPerson
-nPersonPlural
-nMass
-nMassBad
-nPath
-nOf
-ing
-adj
-adjBig
-adjWith
-adjPrefix
-vtMass
-vtPerson
-vtDestroy
-viPerson
-nTheXOf
-ppPerson
-ppThingPrep
-fixedAdvP
-fixedNP
- */
-
-
     switch (pattern[x]) {
       case 'nCosmos': result += retrieveRandomWordOfType(nCosmos);
       break;
@@ -168,7 +152,6 @@ fixedNP
     }
 
     result += ' ';
-    // console.log(result);
   }
 
   result = result.trim();
@@ -249,8 +232,6 @@ $('.topbar button').click(function(){
 
 
 $(document).ready(function() {
-
-
 
 });
 

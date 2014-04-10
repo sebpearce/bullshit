@@ -1,5 +1,11 @@
 /*
- ****************************************************************************
+ * patterns.js
+ * A list of sentence patterns to be parsed by main.js
+ * 
+ * New Age Bullshit Generator
+ * © 2014 Seb Pearce (sebpearce.com)
+ * Licensed under the MIT License.
+ * 
  */
 
 var sentencePatterns = new Array();
