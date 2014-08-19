@@ -39,7 +39,8 @@ sentencePatterns[1] = [
   'nMassBad is the antithesis of nMass',
   'You may be ruled by nMassBad without realizing it. Do not let it vtDestroy the nTheXOf of your nPath',
   'the complexity of the present time seems to demand a ing of our nOurPlural if we are going to survive',
-  'nMassBad is born in the gap where nMass has been excluded'
+  'nMassBad is born in the gap where nMass has been excluded',
+  'Where there is nMassBad, nMass cannot thrive'
 ];
 
 // future hope
@@ -54,7 +55,9 @@ sentencePatterns[2] = [
   'We must learn how to lead adj lives in the face of nMassBad',
   'We must vtPerson ourselves and vtPerson others',
   'The nOf of nMass is now happening worldwide',
-  'We are being called to explore the nCosmos itself as an interface between nMass and nMass'
+  'We are being called to explore the nCosmos itself as an interface between nMass and nMass',
+  'It is in ing that we are ppPerson',
+  'The nCosmos is approaching a tipping point'
 ];
 
 // you and your problems

@@ -24,7 +24,8 @@ var nCosmos = [
   'solar system',
   'world',
   'stratosphere',
-  'dreamscape'
+  'dreamscape',
+  'biosphere'
 ];
 
 var nPerson = [
@@ -35,7 +36,8 @@ var nPerson = [
   'lifeform',
   'wanderer',
   'visitor',
-  'prophet'
+  'prophet',
+  'seeker'
 ];
 
 var nPersonPlural = [
@@ -50,7 +52,8 @@ var nPersonPlural = [
   'warriors',
   'messengers',
   'dreamers',
-  'storytellers'
+  'storytellers',
+  'seekers'
 ];
 
 var nMass = [
@@ -436,7 +439,8 @@ var fixedNP = [
   'transmissions',
   'morphogenetic fields',
   'bio-feedback',
-  'meridians'
+  'meridians',
+  'morphic resonance'
 ];
 
 var nSubject = [
