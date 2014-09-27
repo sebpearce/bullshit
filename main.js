@@ -212,7 +212,6 @@ $('.topbar button').click(function(){
 
   $('h3').text(generateText(1, sentenceTopic));
 
-
   $('p').each(function( i ) {
     sentenceTopic = randomInt(sentencePatternsClone.length - 1);
     $(this).text(generateText(3, sentenceTopic));
@@ -223,10 +222,8 @@ $('.topbar button').click(function(){
   $('blockquote').text(generateText(1, sentenceTopic));
 
   // change image
-  $('img').hide();
-  $('img').attr('src', 'http://placeimg.com/640/480/nature?' + Math.random());
-  $('img').fadeIn(400);
-
+  $('img').attr('src', 'http://placeimg.com/640/480/nature?' + 
+    Math.floor(Math.random() * 100));
 
 });
 
