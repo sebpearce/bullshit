@@ -224,7 +224,7 @@ $('.topbar button').click(function(){
 
   // change image
   $('img').hide();
-  $('img').attr('src', 'http://placeimg.com/640/480/nature');
+  $('img').attr('src', 'http://placeimg.com/640/480/nature?' + Math.random());
   $('img').fadeIn(400);
 
 
