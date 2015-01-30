@@ -192,7 +192,7 @@ var nOf = [
   'reimagining',
   'rekindling',
   'unifying',
-  'ozmosis',
+  'osmosis',
   'vision',
   'uprising',
   'explosion'
