@@ -127,16 +127,40 @@ a:hover {
   height: 30px;
   width: 200px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid hsl(200,100%,40%);
   background: hsla(0,0%,0%,0.3);
-  color: hsla(0,0%,100%,0.7);
+  color: hsla(200,80%,80%,1);
   font: 16px 'Oswald', sans-serif;
+  box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9);
+  -webkit-animation: glow .5s 6 alternate;
+  -moz-animation: glow .5s 6 alternate;
+  -o-animation: glow .5s 6 alternate;
+  animation: glow .5s 6 alternate;
+  animation-iteration-count: 3;
+}
+
+@-webkit-keyframes glow {
+  0%   { box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9); }
+  100% { box-shadow: 0px 0px 55px 10px white; }
+}
+@-moz-keyframes glow {
+  0%   { box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9); }
+  100% { box-shadow: 0px 0px 55px 10px white; }
+}
+@-o-keyframes glow {
+  0%   { box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9); }
+  100% { box-shadow: 0px 0px 55px 10px white; }
+}
+@keyframes glow {
+  0%   { box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9); }
+  100% { box-shadow: 0px 0px 55px 10px white; }
 }
 
 .topbar button:hover {
   background: hsla(0,0%,0%,0.4);
   color: white;
   border: 1px solid #ccc;
+  box-shadow: 0px 0px 55px 5px white;
 }
 
 .topbar button:active {
