@@ -11,7 +11,7 @@ For example, take this sentence pattern from `patterns.js`:
 
 Here there are 4 variable words: `ing`, `nOf`, `adj` and `nMass`.
 
-The script looks inside `vocab.js` for those 4 words. In the case of `ing` (a present participle), it might choose "flowering" or "unveiling." For `nMass` (a mass noun), it might choose "consciousness", "growth" or "stardust."
+The script looks inside `vocab.js` for those 4 words. In the case of `ing` (a present participle), it might choose "flowering" or "unveiling." For `nMass` (a mass noun), it might choose "consciousness," "growth" or "stardust."
 
 It then fills each heading and paragraph of the page with a certain number of sentence patterns. Paragraphs get three sentences each, for instance, while each heading gets one.
 
