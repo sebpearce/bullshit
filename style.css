@@ -132,11 +132,16 @@ a:hover {
   color: hsla(200,80%,80%,1);
   font: 16px 'Oswald', sans-serif;
   box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9);
+  -webkit-box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9);
+  -moz-box-shadow: 0px 0px 55px 5px hsla(210,90%,80%,0.9);
+
   -webkit-animation: glow .5s 6 alternate;
   -moz-animation: glow .5s 6 alternate;
   -o-animation: glow .5s 6 alternate;
   animation: glow .5s 6 alternate;
   animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
+  -moz-animation-iteration-count: 3;
 }
 
 @-webkit-keyframes glow {
@@ -161,6 +166,8 @@ a:hover {
   color: white;
   border: 1px solid #ccc;
   box-shadow: 0px 0px 55px 5px white;
+  -webkit-box-shadow: 0px 0px 55px 5px white;
+  -moz-box-shadow: 0px 0px 55px 5px white;
 }
 
 .topbar button:active {
@@ -174,7 +181,10 @@ a:hover {
   padding: 50px;
   background-color: hsla(0,0%,0%,0.6);
   box-shadow: 0 0 30px 10px hsla(0,0%,100%,0.3);
+  -webkit-box-shadow: 0 0 30px 10px hsla(0,0%,100%,0.3);
+  -moz-box-shadow: 0 0 30px 10px hsla(0,0%,100%,0.3);
   border-radius: 30px;
+  -webkit-border-radius: 30px;
 }
 
 .comments {
@@ -220,7 +230,10 @@ a:hover {
   .master {
     padding: 4%;
     box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     border-radius: 0;
+    -webkit-border-radius: 0;
     margin: 100px 0 0 0;
     width: 100%;
   }
