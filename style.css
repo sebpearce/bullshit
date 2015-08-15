@@ -188,9 +188,14 @@ a:hover {
 }
 
 .comments {
+  background: #121212;
+  border-radius: 30px;
   max-width: 768px;
   margin: 0 auto 50px auto;
   padding: 0 50px 0 50px;
+  box-shadow: 0 0 30px 10px hsla(0,0%,100%,0.3);
+  -webkit-box-shadow: 0 0 30px 10px hsla(0,0%,100%,0.3);
+  -moz-box-shadow: 0 0 30px 10px hsla(0,0%,100%,0.3);
 }
 
 @media screen and (max-width: 641px) {
@@ -252,6 +257,7 @@ a:hover {
 
   .comments {
     padding: 4%;
+    border-radius: 0px;
   }
   
 }
