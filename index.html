@@ -49,6 +49,7 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
+  <div class="page-flash"></div>
 
   <div class="links">
     <div style="float:left">
@@ -61,26 +62,26 @@
   <div style="clear: both;"></div>
 
   <div class="topbar">
-    <button>Reionize electrons</button>
+    <button class="glowjump">Reionize electrons</button>
   </div>
 
   <div class="master">
 
-      <h1>New Age Bullshit Generator</h1>
+      <h1 id="main-heading">New Age Bullshit Generator</h1>
 
-      <h2>Namaste. Do you want to sell a New Age product and/or service? Tired of coming up with meaningless copy for your starry-eyed customers? Want to join the ranks of bestselling self-help authors? We can help.</h2>
+      <h2 id="sub-heading">Namaste. Do you want to sell a New Age product and/or service? Tired of coming up with meaningless copy for your starry-eyed customers? Want to join the ranks of bestselling self-help authors? We can help.</h2>
 
-      <h3>Just click and the truth will manifest</h3>
+      <h3 id="third-heading">Just click and the truth will manifest</h3>
 
       <p>Click the <em>Reionize electrons</em> button at the top of the page to generate a full page of New Age poppycock.</p>
 
-      <img src="http://placeimg.com/640/480/nature" />
+      <img id="nature-image" src="http://placeimg.com/640/480/nature" />
 
       <p>The inspiration for this idea came from watching philosophy debates involving Deepak Chopra. I wrote a <a href="http://sebpearce.com/blog/bullshit/">blog post about it</a> if you're interested.</p>
 
       <p>After sitting through hours of New Age rhetoric, I decided to have a crack at writing code to generate it automatically and speed things up a bit. I cobbled together a list of New Age buzzwords and cliché sentence patterns and this is the result.</p>
 
-      <blockquote>
+      <blockquote id="quote">
         You’ll get some profound-sounding nonsense here, too.
       </blockquote>  
 
@@ -116,9 +117,9 @@
 
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="main.js"></script>
   <script src="vocab.js"></script>
   <script src="patterns.js"></script>
-  <script src="main.js"></script>
 
   <!-- Google Analytics -->
     <script>

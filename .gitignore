@@ -9,3 +9,5 @@ _site
 .Trashes
 ehthumbs.db
 Thumbs.db
+.sass-cache
+*.css.map
