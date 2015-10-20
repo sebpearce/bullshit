@@ -158,11 +158,11 @@ a {
     border-color: black; }
 
 .glowjump {
-  -webkit-animation: glow_jump 0.4s ease 0.5s 2 alternate;
-  -moz-animation: glow_jump 0.4s ease 0.5s 2 alternate;
-  -ms-animation: glow_jump 0.4s ease 0.5s 2 alternate;
-  -o-animation: glow_jump 0.4s ease 0.5s 2 alternate;
-  animation: glow_jump 0.4s ease 0.5s 2 alternate; }
+  -webkit-animation: glow_jump 0.4s ease 3s 2 alternate;
+  -moz-animation: glow_jump 0.4s ease 3s 2 alternate;
+  -ms-animation: glow_jump 0.4s ease 3s 2 alternate;
+  -o-animation: glow_jump 0.4s ease 3s 2 alternate;
+  animation: glow_jump 0.4s ease 3s 2 alternate; }
 
 @-webkit-keyframes glow_jump {
   from {
