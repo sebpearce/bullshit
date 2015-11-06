@@ -38,7 +38,7 @@ bs.sentencePatterns = [
     'Yes, it is possible to vtDestroy the things that can vtDestroy us, but not without nMass on our side.',
     'nMassBad is the antithesis of nMass.',
     'You may be ruled by nMassBad without realizing it. Do not let it vtDestroy the nTheXOf of your nPath.',
-    'the complexity of the present time seems to demand a ing of our nOurPlural if we are going to survive.',
+    'The complexity of the present time seems to demand a ing of our nOurPlural if we are going to survive.',
     'nMassBad is born in the gap where nMass has been excluded.',
     'Where there is nMassBad, nMass cannot thrive.',
   ],
@@ -78,7 +78,7 @@ bs.sentencePatterns = [
     'Our conversations with other nPersonPlural have led to a ing of adjPrefix adj consciousness.',
     'Humankind has nothing to lose.',
     'We are in the midst of a adj ing of nMass that will vOpenUp the nCosmos itself.',
-    'Who are we?Where on the great nPath will we be ppPerson?',
+    'Who are we? Where on the great nPath will we be ppPerson?',
     'We are at a crossroads of nMass and nMassBad.',
   ],
 
