@@ -12,7 +12,7 @@
 // Toolkit of useful functions
 var kit = {
 
-  copyArrayOfArrays: function copyArrayOfArrays(arr) {
+  copyArrayOfArrays(arr) {
     var result = [];
     for (var i = 0; i < arr.length; i++) {
       result[i] = arr[i].slice();
@@ -20,13 +20,13 @@ var kit = {
     return result;
   },
 
-  capitalizeFirstLetter: function capitalizeFirstLetter(str) {
+  capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   },
 
-  randomInt: function randomInt(max) {
+  randomInt(max) {
     return Math.floor(Math.random() * (max + 1));
-  }
+  },
 
 };
 
@@ -35,23 +35,23 @@ var bs = {
 
   sentencePool: [],
 
-  initializeSentencePool: function initializeSentencePool() {
+  initializeSentencePool() {
     this.sentencePool = [];
     this.sentencePool = kit.copyArrayOfArrays(this.sentencePatterns);
   },
 
-  removeSentenceFromPool: function removeSentenceFromPool(topic, el) {
+  removeSentenceFromPool(topic, el) {
     if (el > -1) {
       this.sentencePool[topic].splice(el, 1);
     }
   },
 
-  retrieveRandomWordOfType: function retrieveRandomWordOfType(type) {
+  retrieveRandomWordOfType(type) {
     var rand = kit.randomInt(this.bullshitWords[type].length - 1);
     return this.bullshitWords[type][rand];
   },
 
-  generateSentence: function generateSentence(topic) {
+  generateSentence(topic) {
 
     var patternNumber = kit.randomInt(this.sentencePool[topic].length - 1);
     var pattern = this.sentencePool[topic][patternNumber];
@@ -61,7 +61,7 @@ var bs = {
     }
 
     // insert a space before . , ; ? so we can split the string into an array
-    var pattern = pattern.replace(/([\.,;\?])/g, ' $1');
+    var pattern = pattern.replace(/([\.,;\?])/g,' $1');
     var pattern = pattern.split(' ');
 
     // remove the pattern from the sentence pool so it can't be re-used
@@ -88,22 +88,22 @@ var bs = {
     // replace 'a [vowel]' with 'an [vowel]'
     // I added a \W before the [Aa] because one time I got
     // 'Dogman is the antithesis of knowledge' :)
-    result = result.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
+    result = result.replace(/(^|\W)([Aa]) ([aeiou])/g,'$1$2n $3');
 
     result = result.trim();
     result = kit.capitalizeFirstLetter(result);
 
     // remove spaces before commas/periods/semicolons
-    result = result.replace(/ ([,\.;\?])/g, '$1');
+    result = result.replace(/ ([,\.;\?])/g,'$1');
     // take care of prefixes (delete the space after the hyphen)
-    result = result.replace(/- /g, '-');
+    result = result.replace(/- /g,'-');
     // add space after question marks if they're mid-sentence
-    result = result.replace(/\?(\w)/g, '? $1');
+    result = result.replace(/\?(\w)/g,'? $1');
 
     return result;
   },
 
-  generateText: function generateText(numberOfSentences, sentenceTopic) {
+  generateText(numberOfSentences, sentenceTopic) {
 
     var fullText = '';
     for (var i = 0; i < numberOfSentences; i++) {
@@ -112,24 +112,25 @@ var bs = {
       if (typeof this.sentencePool[sentenceTopic] == 'undefined') {
         sentenceTopic = kit.randomInt(this.sentencePool.length - 1);
       }
-    }
+    } 
 
     // insert a space between sentences (after periods and question marks)
-    fullText = fullText.replace(/([\.\?])(\w)/g, '$1 $2');
+    fullText = fullText.replace(/([\.\?])(\w)/g,'$1 $2');
 
     return fullText;
-  }
+  },
 
 };
 
-$(' .topbar button ').hover(function () {
+$(' .topbar button ').hover(function(){
   $(this).removeClass('glowjump');
 });
 
-// Page interaction
-$(' .topbar button ').click(function () {
 
-  $(' .page-flash ').show(1, function () {
+// Page interaction
+$(' .topbar button ').click(function(){
+
+  $(' .page-flash ').show(1, function(){
 
     // generate random topic
     var sentenceTopic = 0;
@@ -138,7 +139,7 @@ $(' .topbar button ').click(function () {
     $(' #sub-heading ').text(bs.generateText(2, sentenceTopic));
     sentenceTopic = kit.randomInt(bs.sentencePool.length - 2);
     $(' #third-heading ').text(bs.generateText(1, sentenceTopic));
-    $(' p ').each(function (i) {
+    $(' p ').each(function(i) {
       sentenceTopic = kit.randomInt(bs.sentencePool.length - 1);
       $(this).text(bs.generateText(3, sentenceTopic));
     });
@@ -146,12 +147,20 @@ $(' .topbar button ').click(function () {
     $(' #quote ').text(bs.generateText(1, sentenceTopic));
 
     // change image
-    $(' #nature-image ').fadeTo(1, 0, function () {
-      $(this).attr('src', 'http://placeimg.com/640/480/nature?' + Math.floor(Math.random() * 100)).bind('onreadystatechange load', function () {
+    $(' #nature-image ').fadeTo(1, 0, function(){
+      $(this).attr('src', 'http://placeimg.com/640/480/nature?' + 
+      Math.floor(Math.random() * 100)).bind('onreadystatechange load', function(){
         if (this.complete) $(this).fadeTo(1000, 1);
       });
     });
+
   }).fadeOut(1000);
 
   bs.initializeSentencePool();
+
 });
+
+
+
+
+
