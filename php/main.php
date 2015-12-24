@@ -111,12 +111,12 @@ class Bullshit
          {
            $sentenceTopic = rand(0, count($this->sentencePool) - 1);
          }
-
-         // insert a space between sentences (after periods and question marks)
-         $fullText = preg_replace("/([\.\?])(\w)/", '$1 $2', $fullText);
-
-         return $fullText;
       }
+
+      // insert a space between sentences (after periods and question marks)
+      $fullText = preg_replace("/([\.\?])(\w)/", '$1 $2', $fullText);
+
+      return $fullText;
    }
 }
 
