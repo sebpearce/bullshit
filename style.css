@@ -125,44 +125,15 @@ a {
   font: 16px "Oswald", sans-serif;
   text-transform: uppercase;
   border-radius: 10px;
-  transition: transform 0.1s, color 0.2s, border-color 0.2s, box-shadow 0.5s;
   -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   -ms-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); }
-  .topbar button:hover {
-    transform: scale(1.2);
-    -webkit-animation: pulse 0.3s linear 0s infinite alternate;
-    -moz-animation: pulse 0.3s linear 0s infinite alternate;
-    -ms-animation: pulse 0.3s linear 0s infinite alternate;
-    -o-animation: pulse 0.3s linear 0s infinite alternate;
-    animation: pulse 0.3s linear 0s infinite alternate;
-    -webkit-box-shadow: 0px 0px 55px 5px white;
-    -moz-box-shadow: 0px 0px 55px 5px white;
-    -ms-box-shadow: 0px 0px 55px 5px white;
-    -o-box-shadow: 0px 0px 55px 5px white;
-    box-shadow: 0px 0px 55px 5px white;
-    color: white;
-    border-color: #ccc; }
   .topbar button:active {
-    transition: transform 0s, border-color 0s, background 0s, box-shadow 0.5s;
-    -webkit-animation: 0;
-    -moz-animation: 0;
-    -ms-animation: 0;
-    -o-animation: 0;
-    animation: 0;
-    transform: scale(1.1);
     background: #264d73;
     color: black;
     border-color: black; }
-
-.glowjump {
-  -webkit-animation: glow_jump 0.4s ease 3s 2 alternate;
-  -moz-animation: glow_jump 0.4s ease 3s 2 alternate;
-  -ms-animation: glow_jump 0.4s ease 3s 2 alternate;
-  -o-animation: glow_jump 0.4s ease 3s 2 alternate;
-  animation: glow_jump 0.4s ease 3s 2 alternate; }
 
 @-webkit-keyframes glow_jump {
   from {
@@ -278,7 +249,14 @@ a {
 
   h1 {
     margin-top: 0.5em;
+    font-size: 1.6em;
     text-align: center; }
+
+  h2 {
+    font-size: 1.2em; }
+
+  h3 {
+    font-size: 1.3em; }
 
   img,
   blockquote {
@@ -320,6 +298,38 @@ a {
     padding: 4%;
     border-radius: 0px; } }
 @media screen and (min-width: 868px) {
+  .glowjump {
+    -webkit-animation: glow_jump 0.4s ease 3s 2 alternate;
+    -moz-animation: glow_jump 0.4s ease 3s 2 alternate;
+    -ms-animation: glow_jump 0.4s ease 3s 2 alternate;
+    -o-animation: glow_jump 0.4s ease 3s 2 alternate;
+    animation: glow_jump 0.4s ease 3s 2 alternate; }
+
+  .topbar button {
+    transition: transform 0.1s, color 0.2s, border-color 0.2s, box-shadow 0.5s; }
+    .topbar button:hover {
+      transform: scale(1.2);
+      -webkit-animation: pulse 0.3s linear 0s infinite alternate;
+      -moz-animation: pulse 0.3s linear 0s infinite alternate;
+      -ms-animation: pulse 0.3s linear 0s infinite alternate;
+      -o-animation: pulse 0.3s linear 0s infinite alternate;
+      animation: pulse 0.3s linear 0s infinite alternate;
+      -webkit-box-shadow: 0px 0px 55px 5px white;
+      -moz-box-shadow: 0px 0px 55px 5px white;
+      -ms-box-shadow: 0px 0px 55px 5px white;
+      -o-box-shadow: 0px 0px 55px 5px white;
+      box-shadow: 0px 0px 55px 5px white;
+      color: white;
+      border-color: #ccc; }
+    .topbar button:active {
+      transition: transform 0s, border-color 0s, background 0s, box-shadow 0.5s;
+      -webkit-animation: 0;
+      -moz-animation: 0;
+      -ms-animation: 0;
+      -o-animation: 0;
+      animation: 0;
+      transform: scale(1.1); }
+
   .master {
     margin: 80px auto 20px auto; }
 
