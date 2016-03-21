@@ -176,26 +176,12 @@ a {
   text-transform: uppercase;
   border-radius: 10px;
   @include vendor-prefixes(box-shadow, 0px 5px 15px hsla(0,0%,0%,0.5));
-<<<<<<< HEAD
-  
   &:active {
-    // transition: transform 0s, border-color 0s, background 0s, box-shadow 0.5s;
-    // @include vendor-prefixes(animation, 0);
-    // transform: scale(1.1);
-=======
-
-  &:active {
->>>>>>> master
     background: hsl($base-hue,50%,30%);
     color: black;
     border-color: black;
   }
 }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 
 @include keyframe(glow_jump) {
   from { 
@@ -257,22 +243,15 @@ a {
 
   h1 {
     margin-top: 0.5em;
-<<<<<<< HEAD
     font-size: 1.8em;
-=======
-    font-size: 1.6em;
->>>>>>> master
     text-align: center;
   }
 
   h2 {
-<<<<<<< HEAD
-=======
     font-size: 1.2em;
   }
 
   h3 {
->>>>>>> master
     font-size: 1.3em;
   }
 
@@ -319,32 +298,21 @@ a {
 
 @media screen and (min-width: 868px) {
 
-<<<<<<< HEAD
-  .topbar button {
-    &:hover {
-      transform: scale(1.2);
-      color: white;
-      border-color: #ccc;
-      @include vendor-prefixes(animation, pulse 0.3s linear 0s infinite alternate);
-      @include vendor-prefixes(box-shadow, 0px 0px 55px 5px white);
-    }
-=======
   .glowjump {
     @include vendor-prefixes(animation, glow_jump 0.4s ease 3s 2 alternate);
   }
 
   .topbar button {
     transition: transform 0.1s, color 0.2s, border-color 0.2s, box-shadow 0.5s;
-    
+
     &:hover {
       transform: scale(1.2);
-      @include vendor-prefixes(animation, pulse 0.3s linear 0s infinite alternate);
-      @include vendor-prefixes(box-shadow, 0px 0px 55px 5px white);
       color: white;
       border-color: #ccc;
+      @include vendor-prefixes(animation, pulse 0.3s linear 0s infinite alternate);
+      @include vendor-prefixes(box-shadow, 0px 0px 55px 5px white);
     }
 
->>>>>>> master
     &:active {
       transition: transform 0s, border-color 0s, background 0s, box-shadow 0.5s;
       @include vendor-prefixes(animation, 0);
@@ -352,13 +320,6 @@ a {
     }
   }
 
-<<<<<<< HEAD
-  .glowjump {
-    @include vendor-prefixes(animation, glow_jump 0.4s ease 3s 2 alternate);
-  }
-
-=======
->>>>>>> master
   .master {
     margin: 80px auto 20px auto;
   }
