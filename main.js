@@ -33,7 +33,29 @@ var kit = {
 
   randomInt: function randomInt(max) {
     return Math.floor(Math.random() * (max + 1));
-  }
+  },
+
+  replaceAWithAn: function(sentence) {
+    // replace 'a [vowel]' with 'an [vowel]'
+    // I added a \W before the [Aa] because one time I got
+    // 'Dogman is the antithesis of knowledge' :)
+    return sentence.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
+  },
+
+  removeSpacesBeforePunctuation: function(sentence) {
+    // remove spaces before commas/periods/semicolons
+    return sentence.replace(/ ([,\.;\?])/g, '$1');
+  },
+
+  deleteSpaceAfterHyphen: function(sentence) {
+    // take care of prefixes (delete the space after the hyphen)
+    return sentence.replace(/- /g, '-');
+  },
+
+  addSpaceAfterQuestionMarks: function(sentence) {
+    // add space after question marks if they're mid-sentence
+    return sentence.replace(/\?(\w)/g, '? $1');
+  },
 
 };
 
@@ -61,20 +83,12 @@ var bs = {
   cleanSentence: function cleanSentence(sentence) {
     var result;
 
-    // replace 'a [vowel]' with 'an [vowel]'
-    // I added a \W before the [Aa] because one time I got
-    // 'Dogman is the antithesis of knowledge' :)
-    result = sentence.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
-
+    result = kit.replaceAWithAn(sentence);
     result = result.trim();
     result = kit.capitalizeFirstLetter(result);
-
-    // remove spaces before commas/periods/semicolons
-    result = result.replace(/ ([,\.;\?])/g, '$1');
-    // take care of prefixes (delete the space after the hyphen)
-    result = result.replace(/- /g, '-');
-    // add space after question marks if they're mid-sentence
-    result = result.replace(/\?(\w)/g, '? $1');
+    result = kit.removeSpacesBeforePunctuation(result);
+    result = kit.deleteSpaceAfterHyphen(result);
+    result = kit.addSpaceAfterQuestionMarks(result);
 
     return result;
   },
