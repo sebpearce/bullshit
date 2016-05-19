@@ -58,6 +58,7 @@ bs.sentencePatterns = [
     'We are being called to explore the nCosmos itself as an interface between nMass and nMass.',
     'It is in ing that we are ppPerson.',
     'The nCosmos is approaching a tipping point.',
+    'nameOfGod will vOpenUp adj nMass.',
   ],
 
   // you and your problems
@@ -88,6 +89,8 @@ bs.sentencePatterns = [
     'nSubject may be the solution to what’s holding you back from a adjBig nOf of nMass.',
     'You will soon be ppPerson by a power deep within yourself — a power that is adj, adj.',
     'As you viPerson, you will enter into infinite nMass that transcends understanding.',
+    'This is the vision behind our 100% adjProduct, adjProduct nProduct.',
+    'With our adjProduct nProduct, nBenefits is only the beginning.',
   ],
 
 ];

@@ -7,6 +7,13 @@
  * © 2014-15 Seb Pearce (sebpearce.com)
  * Licensed under the MIT License.
  * 
+ * TODO:
+ * 
+ * Fix things like "This is the vision behind our 100% zero-point energy, 
+ * zero-point energy karma bracelets."
+ * 
+ * bs.generateSentence() should do 1 thing only (generate a sentence),
+ * not pull patterns out of use.
  */
 
 // Toolkit of useful functions
@@ -51,6 +58,27 @@ var bs = {
     return this.bullshitWords[type][rand];
   },
 
+  cleanSentence: function cleanSentence(sentence) {
+    var result;
+
+    // replace 'a [vowel]' with 'an [vowel]'
+    // I added a \W before the [Aa] because one time I got
+    // 'Dogman is the antithesis of knowledge' :)
+    result = sentence.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
+
+    result = result.trim();
+    result = kit.capitalizeFirstLetter(result);
+
+    // remove spaces before commas/periods/semicolons
+    result = result.replace(/ ([,\.;\?])/g, '$1');
+    // take care of prefixes (delete the space after the hyphen)
+    result = result.replace(/- /g, '-');
+    // add space after question marks if they're mid-sentence
+    result = result.replace(/\?(\w)/g, '? $1');
+
+    return result;
+  },
+
   generateSentence: function generateSentence(topic) {
 
     var patternNumber = kit.randomInt(this.sentencePool[topic].length - 1);
@@ -85,20 +113,7 @@ var bs = {
       result += ' ';
     }
 
-    // replace 'a [vowel]' with 'an [vowel]'
-    // I added a \W before the [Aa] because one time I got
-    // 'Dogman is the antithesis of knowledge' :)
-    result = result.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
-
-    result = result.trim();
-    result = kit.capitalizeFirstLetter(result);
-
-    // remove spaces before commas/periods/semicolons
-    result = result.replace(/ ([,\.;\?])/g, '$1');
-    // take care of prefixes (delete the space after the hyphen)
-    result = result.replace(/- /g, '-');
-    // add space after question marks if they're mid-sentence
-    result = result.replace(/\?(\w)/g, '? $1');
+    result = this.cleanSentence(result);
 
     return result;
   },
