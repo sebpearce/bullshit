@@ -118,8 +118,12 @@ var bs = {
     return result;
   },
 
-  generateText: function generateText(numberOfSentences, sentenceTopic) {
+  insertSpaceBetweenSentences: function insertSpaceBetweenSentences(fullText) {
+    // insert a space between sentences (after periods and question marks)
+    return fullText.replace(/([\.\?])(\w)/g, '$1 $2');
+  },
 
+  generateText: function generateText(numberOfSentences, sentenceTopic) {
     var fullText = '';
     for (var i = 0; i < numberOfSentences; i++) {
       fullText += this.generateSentence(sentenceTopic);
@@ -129,8 +133,7 @@ var bs = {
       }
     }
 
-    // insert a space between sentences (after periods and question marks)
-    fullText = fullText.replace(/([\.\?])(\w)/g, '$1 $2');
+    fullText = this.insertSpaceBetweenSentences(fullText);
 
     return fullText;
   }
