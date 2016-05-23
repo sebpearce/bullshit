@@ -556,6 +556,7 @@ bs.bullshitWords = {
 		'tofu',
 		'massage oil',
 		'herbal incense',
+		'cheesecloth tunics',
 	],
 
 };

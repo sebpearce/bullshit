@@ -19,7 +19,7 @@
 // Toolkit of useful functions
 var kit = {
 
-  copyArrayOfArrays: function copyArrayOfArrays(arr) {
+  copyArrayOfArrays: function (arr) {
     var result = [];
     for (var i = 0; i < arr.length; i++) {
       result[i] = arr[i].slice();
@@ -27,11 +27,11 @@ var kit = {
     return result;
   },
 
-  capitalizeFirstLetter: function capitalizeFirstLetter(str) {
+  capitalizeFirstLetter: function (str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   },
 
-  randomInt: function randomInt(max) {
+  randomInt: function (max) {
     return Math.floor(Math.random() * (max + 1));
   },
 
@@ -57,6 +57,15 @@ var kit = {
     return sentence.replace(/\?(\w)/g, '? $1');
   },
 
+  insertSpaceBeforePunctuation: function(sentence) {
+    return sentence.replace(/([\.,;\?])/g, ' $1');
+  },
+
+  insertSpaceBetweenSentences: function (text) {
+    // insert a space between sentences (after periods and question marks)
+    return text.replace(/([\.\?])(\w)/g, '$1 $2');
+  },
+
 };
 
 // The generator in all its quantum glory
@@ -64,23 +73,23 @@ var bs = {
 
   sentencePool: [],
 
-  initializeSentencePool: function initializeSentencePool() {
+  initializeSentencePool: function () {
     this.sentencePool = [];
     this.sentencePool = kit.copyArrayOfArrays(this.sentencePatterns);
   },
 
-  removeSentenceFromPool: function removeSentenceFromPool(topic, el) {
+  removeSentenceFromPool: function (topic, el) {
     if (el > -1) {
       this.sentencePool[topic].splice(el, 1);
     }
   },
 
-  retrieveRandomWordOfType: function retrieveRandomWordOfType(type) {
+  retrieveRandomWordOfType: function (type) {
     var rand = kit.randomInt(this.bullshitWords[type].length - 1);
     return this.bullshitWords[type][rand];
   },
 
-  cleanSentence: function cleanSentence(sentence) {
+  cleanSentence: function (sentence) {
     var result;
 
     result = kit.replaceAWithAn(sentence);
@@ -93,7 +102,7 @@ var bs = {
     return result;
   },
 
-  generateSentence: function generateSentence(topic) {
+  generateSentence: function (topic) {
 
     var patternNumber = kit.randomInt(this.sentencePool[topic].length - 1);
     var pattern = this.sentencePool[topic][patternNumber];
@@ -103,8 +112,8 @@ var bs = {
     }
 
     // insert a space before . , ; ? so we can split the string into an array
-    var pattern = pattern.replace(/([\.,;\?])/g, ' $1');
-    var pattern = pattern.split(' ');
+    pattern = kit.insertSpaceBeforePunctuation(pattern);
+    pattern = pattern.split(' ');
 
     // remove the pattern from the sentence pool so it can't be re-used
     this.removeSentenceFromPool(topic, patternNumber);
@@ -132,12 +141,7 @@ var bs = {
     return result;
   },
 
-  insertSpaceBetweenSentences: function insertSpaceBetweenSentences(fullText) {
-    // insert a space between sentences (after periods and question marks)
-    return fullText.replace(/([\.\?])(\w)/g, '$1 $2');
-  },
-
-  generateText: function generateText(numberOfSentences, sentenceTopic) {
+  generateText: function (numberOfSentences, sentenceTopic) {
     var fullText = '';
     for (var i = 0; i < numberOfSentences; i++) {
       fullText += this.generateSentence(sentenceTopic);
@@ -147,7 +151,7 @@ var bs = {
       }
     }
 
-    fullText = this.insertSpaceBetweenSentences(fullText);
+    fullText = kit.insertSpaceBetweenSentences(fullText);
 
     return fullText;
   }
