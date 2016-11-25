@@ -6,6 +6,7 @@
 
 $base-hue: 210;
 $background-gradient: linear-gradient(hsla($base-hue,50%,70%,0.6) 0%, hsla(0,0%,0%,0.5) 100%);
+$background-gradient-modal: linear-gradient(hsl($base-hue,40%,20%) 0%, hsl(0,0%,0%) 100%);
 $base-font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $main-heading-font: 34px 'Orbitron', sans-serif;
 $sub-heading-font: 22px 'Merriweather', serif;
@@ -53,14 +54,14 @@ body {
 }
 
 body:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    background: $background-gradient;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: $background-gradient;
 }
 
 .page-flash {
@@ -107,7 +108,7 @@ em {
   font-weight: bold;
 }
 
-img {
+.nature-image {
   height: 240px;
   width: 320px;
   float: right;
@@ -135,20 +136,95 @@ a {
   }
 }
 
-.links {
+.links-left,
+.links-right {
   position: absolute;
   top: 15px;
   text-align: center;
   z-index: 50;
 }
 
+.links-left {
+  left: 10px;
+}
+
+.links-right {
+  right: 10px;
+}
+
 .fb-share-button {
-  margin-left: 10px;
   vertical-align: top;
 }
 
 .twitter-share-button {
   margin-left: 10px;
+}
+
+.donation-link {
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  background: #222;
+  color: #fff;
+  padding: 3px 6px 3px 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid #ef9e5b;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    background: url('bitcoin.svg');
+    background-size: cover;
+    width: 13px;
+    height: 13px;
+  }
+
+  &:hover {
+    background: hsl($base-hue, 50%, 50%);
+    color: #fff;
+    border-color: #fff;
+  }
+
+  &:active {
+    top: 1px;
+  }
+}
+
+.donation-modal {
+  display: none;
+  font-size: 21px;
+  // background: hsl(210,50%,17%) !important;
+  background: $background-gradient-modal !important;
+  line-height: 1.5;
+  padding: 2em !important;
+  box-shadow: 0 0 55px 5px hsla(0,0%,100%,0.3) !important;
+  border: 4px solid #000 !important;
+  border-radius: 20px !important;
+
+  p {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 1.5em;
+  }
+
+  .bitcoin-address {
+    font-weight: 600;
+  }
+
+  .qr-code {
+    text-align: center;
+  }
+
+  img {
+    width: auto;
+    height: auto;
+  }
 }
 
 .topbar {
@@ -184,15 +260,15 @@ a {
 }
 
 @include keyframe(glow_jump) {
-  from { 
-    transform: scale(1); 
+  from {
+    transform: scale(1);
     @include vendor-prefixes(box-shadow, 0px 0px 55px 5px hsla(210,90%,80%,0.9));
   }
-  to { 
-    transform: scale(1.3); 
+  to {
+    transform: scale(1.3);
     @include vendor-prefixes(box-shadow, 0px 0px 55px 10px white);
     color: white;
-    border-color: #ccc; 
+    border-color: #ccc;
   }
 }
 
@@ -226,12 +302,12 @@ a {
   @include vendor-prefixes(box-shadow, 0 0 30px 10px hsla(0,0%,100%,0.3));
 }
 
-@media screen and (max-width: 641px) {
+@media screen and (max-width: 767px) {
 
   body:before {
     content: "";
     content: none;
-    z-index: -1; 
+    z-index: -1;
     position: fixed;
     background: none;
   }
@@ -255,14 +331,14 @@ a {
     font-size: 1.3em;
   }
 
-  img,
+  .nature-image,
   blockquote {
     display: block;
     margin: 0 auto;
     float: none;
   }
 
-  img {
+  .nature-image {
     max-width: 320px;
     max-height: 240px;
     width: 95%;
@@ -277,6 +353,11 @@ a {
     width: 100%;
   }
 
+  .donation-modal .bitcoin-address {
+    word-break: break-all;
+    font-size: 0.8em;
+  }
+
   .topbar {
     height: 100px;
   }
@@ -285,7 +366,7 @@ a {
     margin-top: 35px;
   }
 
-  .links {
+  .links-left {
     width: 100%;
   }
 
@@ -293,7 +374,7 @@ a {
     padding: 4%;
     border-radius: 0px;
   }
-  
+
 }
 
 @media screen and (min-width: 868px) {

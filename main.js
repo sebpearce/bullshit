@@ -2,17 +2,24 @@
 
 /*
  * main.js
- * 
+ *
  * New Age Bullshit Generator
  * © 2014-15 Seb Pearce (sebpearce.com)
  * Licensed under the MIT License.
- * 
+ *
+ * TODO:
+ *
+ * Fix things like "This is the vision behind our 100% zero-point energy,
+ * zero-point energy karma bracelets."
+ *
+ * bs.generateSentence() should do 1 thing only (generate a sentence),
+ * not pull patterns out of use.
  */
 
 // Toolkit of useful functions
 var kit = {
 
-  copyArrayOfArrays: function copyArrayOfArrays(arr) {
+  copyArrayOfArrays: function (arr) {
     var result = [];
     for (var i = 0; i < arr.length; i++) {
       result[i] = arr[i].slice();
@@ -20,13 +27,44 @@ var kit = {
     return result;
   },
 
-  capitalizeFirstLetter: function capitalizeFirstLetter(str) {
+  capitalizeFirstLetter: function (str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   },
 
-  randomInt: function randomInt(max) {
+  randomInt: function (max) {
     return Math.floor(Math.random() * (max + 1));
-  }
+  },
+
+  replaceAWithAn: function(sentence) {
+    // replace 'a [vowel]' with 'an [vowel]'
+    // I added a \W before the [Aa] because one time I got
+    // 'Dogman is the antithesis of knowledge' :)
+    return sentence.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
+  },
+
+  removeSpacesBeforePunctuation: function(sentence) {
+    // remove spaces before commas/periods/semicolons
+    return sentence.replace(/ ([,\.;\?])/g, '$1');
+  },
+
+  deleteSpaceAfterHyphen: function(sentence) {
+    // take care of prefixes (delete the space after the hyphen)
+    return sentence.replace(/- /g, '-');
+  },
+
+  addSpaceAfterQuestionMarks: function(sentence) {
+    // add space after question marks if they're mid-sentence
+    return sentence.replace(/\?(\w)/g, '? $1');
+  },
+
+  insertSpaceBeforePunctuation: function(sentence) {
+    return sentence.replace(/([\.,;\?])/g, ' $1');
+  },
+
+  insertSpaceBetweenSentences: function (text) {
+    // insert a space between sentences (after periods and question marks)
+    return text.replace(/([\.\?])(\w)/g, '$1 $2');
+  },
 
 };
 
@@ -35,23 +73,36 @@ var bs = {
 
   sentencePool: [],
 
-  initializeSentencePool: function initializeSentencePool() {
+  initializeSentencePool: function () {
     this.sentencePool = [];
     this.sentencePool = kit.copyArrayOfArrays(this.sentencePatterns);
   },
 
-  removeSentenceFromPool: function removeSentenceFromPool(topic, el) {
+  removeSentenceFromPool: function (topic, el) {
     if (el > -1) {
       this.sentencePool[topic].splice(el, 1);
     }
   },
 
-  retrieveRandomWordOfType: function retrieveRandomWordOfType(type) {
+  retrieveRandomWordOfType: function (type) {
     var rand = kit.randomInt(this.bullshitWords[type].length - 1);
     return this.bullshitWords[type][rand];
   },
 
-  generateSentence: function generateSentence(topic) {
+  cleanSentence: function (sentence) {
+    var result;
+
+    result = kit.replaceAWithAn(sentence);
+    result = result.trim();
+    result = kit.capitalizeFirstLetter(result);
+    result = kit.removeSpacesBeforePunctuation(result);
+    result = kit.deleteSpaceAfterHyphen(result);
+    result = kit.addSpaceAfterQuestionMarks(result);
+
+    return result;
+  },
+
+  generateSentence: function (topic) {
 
     var patternNumber = kit.randomInt(this.sentencePool[topic].length - 1);
     var pattern = this.sentencePool[topic][patternNumber];
@@ -61,8 +112,8 @@ var bs = {
     }
 
     // insert a space before . , ; ? so we can split the string into an array
-    var pattern = pattern.replace(/([\.,;\?])/g, ' $1');
-    var pattern = pattern.split(' ');
+    pattern = kit.insertSpaceBeforePunctuation(pattern);
+    pattern = pattern.split(' ');
 
     // remove the pattern from the sentence pool so it can't be re-used
     this.removeSentenceFromPool(topic, patternNumber);
@@ -85,26 +136,12 @@ var bs = {
       result += ' ';
     }
 
-    // replace 'a [vowel]' with 'an [vowel]'
-    // I added a \W before the [Aa] because one time I got
-    // 'Dogman is the antithesis of knowledge' :)
-    result = result.replace(/(^|\W)([Aa]) ([aeiou])/g, '$1$2n $3');
-
-    result = result.trim();
-    result = kit.capitalizeFirstLetter(result);
-
-    // remove spaces before commas/periods/semicolons
-    result = result.replace(/ ([,\.;\?])/g, '$1');
-    // take care of prefixes (delete the space after the hyphen)
-    result = result.replace(/- /g, '-');
-    // add space after question marks if they're mid-sentence
-    result = result.replace(/\?(\w)/g, '? $1');
+    result = this.cleanSentence(result);
 
     return result;
   },
 
-  generateText: function generateText(numberOfSentences, sentenceTopic) {
-
+  generateText: function (numberOfSentences, sentenceTopic) {
     var fullText = '';
     for (var i = 0; i < numberOfSentences; i++) {
       fullText += this.generateSentence(sentenceTopic);
@@ -114,8 +151,7 @@ var bs = {
       }
     }
 
-    // insert a space between sentences (after periods and question marks)
-    fullText = fullText.replace(/([\.\?])(\w)/g, '$1 $2');
+    fullText = kit.insertSpaceBetweenSentences(fullText);
 
     return fullText;
   }
@@ -124,6 +160,12 @@ var bs = {
 
 $(' .topbar button ').hover(function () {
   $(this).removeClass('glowjump');
+});
+
+$('#donation-link').on('click', function(e){
+  $('#donation-modal').modal({
+    fadeDuration: 100
+  });
 });
 
 // Page interaction
@@ -138,7 +180,7 @@ $(' .topbar button ').click(function () {
     $(' #sub-heading ').text(bs.generateText(2, sentenceTopic));
     sentenceTopic = kit.randomInt(bs.sentencePool.length - 2);
     $(' #third-heading ').text(bs.generateText(1, sentenceTopic));
-    $(' p ').each(function (i) {
+    $(' .bs-paragraph ').each(function (i) {
       sentenceTopic = kit.randomInt(bs.sentencePool.length - 1);
       $(this).text(bs.generateText(3, sentenceTopic));
     });
