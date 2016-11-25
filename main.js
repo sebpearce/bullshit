@@ -2,16 +2,16 @@
 
 /*
  * main.js
- * 
+ *
  * New Age Bullshit Generator
  * © 2014-15 Seb Pearce (sebpearce.com)
  * Licensed under the MIT License.
- * 
+ *
  * TODO:
- * 
- * Fix things like "This is the vision behind our 100% zero-point energy, 
+ *
+ * Fix things like "This is the vision behind our 100% zero-point energy,
  * zero-point energy karma bracelets."
- * 
+ *
  * bs.generateSentence() should do 1 thing only (generate a sentence),
  * not pull patterns out of use.
  */
@@ -162,6 +162,12 @@ $(' .topbar button ').hover(function () {
   $(this).removeClass('glowjump');
 });
 
+$('#donation-link').on('click', function(e){
+  $('#donation-modal').modal({
+    fadeDuration: 100
+  });
+});
+
 // Page interaction
 $(' .topbar button ').click(function () {
 
@@ -174,7 +180,7 @@ $(' .topbar button ').click(function () {
     $(' #sub-heading ').text(bs.generateText(2, sentenceTopic));
     sentenceTopic = kit.randomInt(bs.sentencePool.length - 2);
     $(' #third-heading ').text(bs.generateText(1, sentenceTopic));
-    $(' p ').each(function (i) {
+    $(' .bs-paragraph ').each(function (i) {
       sentenceTopic = kit.randomInt(bs.sentencePool.length - 1);
       $(this).text(bs.generateText(3, sentenceTopic));
     });

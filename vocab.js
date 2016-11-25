@@ -1,11 +1,11 @@
 /*
  * vocab.js
  * Vocabulary words to be used in sentence patterns (patterns.js)
- * 
+ *
  * New Age Bullshit Generator
  * © 2014-15 Seb Pearce (sebpearce.com)
  * Licensed under the MIT License.
- * 
+ *
  */
 
 bs.bullshitWords = {
