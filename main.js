@@ -193,6 +193,8 @@ $(' .topbar button ').click(function () {
         if (this.complete) $(this).fadeTo(1000, 1);
       });
     });
+
+    $('#nabg-bot-paragraph').hide();
   }).fadeOut(1000);
 
   bs.initializeSentencePool();
