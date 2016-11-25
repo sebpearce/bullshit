@@ -1,11 +1,11 @@
 /*
  * vocab.js
  * Vocabulary words to be used in sentence patterns (patterns.js)
- * 
+ *
  * New Age Bullshit Generator
  * © 2014-15 Seb Pearce (sebpearce.com)
  * Licensed under the MIT License.
- * 
+ *
  */
 
 bs.bullshitWords = {
@@ -28,6 +28,7 @@ bs.bullshitWords = {
 		'stratosphere',
 		'dreamscape',
 		'biosphere',
+		'dreamtime',
 	],
 
   nPerson: [
@@ -40,6 +41,7 @@ bs.bullshitWords = {
 		'visitor',
 		'prophet',
 		'seeker',
+		'Indigo Child',
 	],
 
   nPersonPlural: [
@@ -55,6 +57,9 @@ bs.bullshitWords = {
 		'dreamers',
 		'storytellers',
 		'seekers',
+		'spiritual brothers and sisters',
+		'mystics',
+		'starseeds',
 	],
 
   nMass: [
@@ -97,7 +102,6 @@ bs.bullshitWords = {
 		'power',
 		'will',
 		'flow',
-		'potential',
 		'potentiality',
 		'chi',
 		'intuition',
@@ -123,6 +127,10 @@ bs.bullshitWords = {
 		'aspiration',
 		'complexity',
 		'serenity',
+		'intention',
+		'gratitude',
+		'starfire',
+		'manna',
 	],
 
   nMassBad: [
@@ -154,6 +162,7 @@ bs.bullshitWords = {
 		'third eyes',
 		'essences',
 		'chakras',
+		'auras',
 	],
 
   nPath: [
@@ -213,6 +222,7 @@ bs.bullshitWords = {
 		'redefining',
 		'condensing',
 		'ennobling',
+		'invocation',
 	],
 
   adj: [
@@ -268,7 +278,7 @@ bs.bullshitWords = {
 		'intergalatic',
 		'holistic',
 		'joyous',
-		'sublime',
+		'eternal',
 	],
 
   adjBig: [
@@ -377,6 +387,8 @@ bs.bullshitWords = {
 		'nature',
 		'healing',
 		'knowledge',
+		'birth',
+		'deeper meaning',
 	],
 
   ppPerson: [
@@ -407,7 +419,6 @@ bs.bullshitWords = {
 		'on a cosmic scale',
 		'devoid of self',
 		'of the creative act',
-		,
 	],
 
   fixedAdvPPlace: [
@@ -415,7 +426,6 @@ bs.bullshitWords = {
 		'outside time',
 		'within the Godhead',
 		'at home in the cosmos',
-		,
 	],
 
   fixedNP: [
@@ -444,6 +454,7 @@ bs.bullshitWords = {
 		'bio-feedback',
 		'meridians',
 		'morphic resonance',
+		'psionic wave oscillations'
 	],
 
   nSubject: [
@@ -466,17 +477,22 @@ bs.bullshitWords = {
 		'numerology',
 		'affirmations',
 		'the Law of Attraction',
+		'tantra',
+		'breathwork'
 	],
 
   vOpenUp: [
-		'open up',
+		// 'open up',
 		'give us access to',
 		'enable us to access',
 		'remove the barriers to',
 		'clear a path toward',
 		'let us access',
-		'tap into',
+		// 'tap into',
 		'align us with',
+		'amplify our connection to',
+		'become our stepping-stone to',
+		'be a gateway to',
 	],
 
   vTraverse: [
@@ -489,6 +505,58 @@ bs.bullshitWords = {
 		'navigate',
 		'wander',
 		'embark on',
+	],
+
+	nameOfGod: [
+		'Gaia',
+		'Shiva',
+		'Parvati',
+		'the Goddess',
+		'Shakti',
+	],
+
+	nBenefits: [
+		'improved focus',
+		'improved concentration',
+		'extreme performance',
+		'enlightenment',
+		'cellular regeneration',
+		'an enhanced sexual drive',
+		'improved hydration',
+		'psychic rejuvenation',
+		'a healthier relationship with the Self',
+	],
+
+	adjProduct: [
+		'alkaline',
+		'quantum',
+		'holographic',
+		'zero-point energy',
+		'“living”',
+		'metaholistic',
+		'ultraviolet',
+		'ozonized',
+		'ion-charged',
+		'hexagonal-cell',
+		'organic',
+	],
+
+	nProduct: [
+		'water',
+		'healing crystals',
+		'Tibetan singing bowls',
+		'malachite runes',
+		'meditation bracelets',
+		'healing wands',
+		'rose quartz',
+		'karma bracelets',
+		'henna tattoos',
+		'hemp garments',
+		'hemp seeds',
+		'tofu',
+		'massage oil',
+		'herbal incense',
+		'cheesecloth tunics',
 	],
 
 };

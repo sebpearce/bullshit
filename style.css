@@ -66,7 +66,7 @@ p {
 em {
   font-weight: bold; }
 
-img {
+.nature-image {
   height: 240px;
   width: 320px;
   float: right;
@@ -90,18 +90,74 @@ a {
   a:hover {
     color: #b8cce0; }
 
-.links {
+.links-left,
+.links-right {
   position: absolute;
   top: 15px;
   text-align: center;
   z-index: 50; }
 
+.links-left {
+  left: 10px; }
+
+.links-right {
+  right: 10px; }
+
 .fb-share-button {
-  margin-left: 10px;
   vertical-align: top; }
 
 .twitter-share-button {
   margin-left: 10px; }
+
+.donation-link {
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  background: #222;
+  color: #fff;
+  padding: 3px 6px 3px 18px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid #ef9e5b; }
+  .donation-link::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    background: url("bitcoin.svg");
+    background-size: cover;
+    width: 13px;
+    height: 13px; }
+  .donation-link:hover {
+    background: #4080bf;
+    color: #fff;
+    border-color: #fff; }
+  .donation-link:active {
+    top: 1px; }
+
+.donation-modal {
+  display: none;
+  font-size: 21px;
+  background: linear-gradient(#1f3347 0%, black 100%) !important;
+  line-height: 1.5;
+  padding: 2em !important;
+  box-shadow: 0 0 55px 5px rgba(255, 255, 255, 0.3) !important;
+  border: 4px solid #000 !important;
+  border-radius: 20px !important; }
+  .donation-modal p {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 1.5em; }
+  .donation-modal .bitcoin-address {
+    font-weight: 600; }
+  .donation-modal .qr-code {
+    text-align: center; }
+  .donation-modal img {
+    width: auto;
+    height: auto; }
 
 .topbar {
   z-index: 40;
@@ -235,7 +291,7 @@ a {
   -o-box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3); }
 
-@media screen and (max-width: 641px) {
+@media screen and (max-width: 767px) {
   body:before {
     content: "";
     content: none;
@@ -258,13 +314,13 @@ a {
   h3 {
     font-size: 1.3em; }
 
-  img,
+  .nature-image,
   blockquote {
     display: block;
     margin: 0 auto;
     float: none; }
 
-  img {
+  .nature-image {
     max-width: 320px;
     max-height: 240px;
     width: 95%;
@@ -285,13 +341,17 @@ a {
     margin: 100px 0 0 0;
     width: 100%; }
 
+  .donation-modal .bitcoin-address {
+    word-break: break-all;
+    font-size: 0.8em; }
+
   .topbar {
     height: 100px; }
 
   .topbar button {
     margin-top: 35px; }
 
-  .links {
+  .links-left {
     width: 100%; }
 
   .comments {
