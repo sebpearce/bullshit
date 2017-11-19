@@ -275,7 +275,7 @@ bs.bullshitWords = {
 		'heroic',
 		'archetypal',
 		'mythic',
-		'intergalatic',
+		'intergalactic',
 		'holistic',
 		'joyous',
 		'eternal',
