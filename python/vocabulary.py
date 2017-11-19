@@ -1,16 +1,12 @@
-/*
- * vocab.js
- * Vocabulary words to be used in sentence patterns (patterns.js)
- *
- * New Age Bullshit Generator
- * © 2014-15 Seb Pearce (sebpearce.com)
- * Licensed under the MIT License.
- *
- */
+#*******************************************************************************
+#
+# Vocabulary definitions
+#
+#*******************************************************************************
 
-bs.bullshitWords = {
 
-  nCosmos: [
+bullshitWords = {
+'nCosmos' : [
 		'cosmos',
 		'quantum soup',
 		'infinite',
@@ -28,10 +24,10 @@ bs.bullshitWords = {
 		'stratosphere',
 		'dreamscape',
 		'biosphere',
-		'dreamtime',
+		'dreamtime'
 	],
 
-  nPerson: [
+'nPerson' : [
 		'being',
 		'child',
 		'traveller',
@@ -41,10 +37,10 @@ bs.bullshitWords = {
 		'visitor',
 		'prophet',
 		'seeker',
-		'Indigo Child',
+		'Indigo Child'
 	],
 
-  nPersonPlural: [
+'nPersonPlural' : [
 		'beings',
 		'travellers',
 		'entities',
@@ -59,10 +55,10 @@ bs.bullshitWords = {
 		'seekers',
 		'spiritual brothers and sisters',
 		'mystics',
-		'starseeds',
+		'starseeds'
 	],
 
-  nMass: [
+'nMass' : [
 		'consciousness',
 		'nature',
 		'beauty',
@@ -130,10 +126,10 @@ bs.bullshitWords = {
 		'intention',
 		'gratitude',
 		'starfire',
-		'manna',
+		'manna'
 	],
 
-  nMassBad: [
+'nMassBad' : [
 		'turbulence',
 		'pain',
 		'suffering',
@@ -148,10 +144,10 @@ bs.bullshitWords = {
 		'delusion',
 		'yearning',
 		'discontinuity',
-		'materialism',
+		'materialism'
 	],
 
-  nOurPlural: [
+'nOurPlural' : [
 		'souls',
 		'lives',
 		'dreams',
@@ -162,10 +158,10 @@ bs.bullshitWords = {
 		'third eyes',
 		'essences',
 		'chakras',
-		'auras',
+		'auras'
 	],
 
-  nPath: [
+'nPath' : [
 		'circuit',
 		'mission',
 		'journey',
@@ -173,10 +169,10 @@ bs.bullshitWords = {
 		'quest',
 		'vision quest',
 		'story',
-		'myth',
+		'myth'
 	],
 
-  nOf: [
+'nOf' : [
 		'quantum leap',
 		'evolution',
 		'spark',
@@ -205,10 +201,10 @@ bs.bullshitWords = {
 		'osmosis',
 		'vision',
 		'uprising',
-		'explosion',
+		'explosion'
 	],
 
-  ing: [
+'ing' : [
 		'flowering',
 		'unfolding',
 		'blossoming',
@@ -222,10 +218,10 @@ bs.bullshitWords = {
 		'redefining',
 		'condensing',
 		'ennobling',
-		'invocation',
+		'invocation'
 	],
 
-  adj: [
+'adj' : [
 		'enlightened',
 		'zero-point',
 		'quantum',
@@ -275,13 +271,13 @@ bs.bullshitWords = {
 		'heroic',
 		'archetypal',
 		'mythic',
-		'intergalactic',
+		'intergalatic',
 		'holistic',
 		'joyous',
-		'eternal',
+		'eternal'
 	],
 
-  adjBig: [
+'adjBig' : [
 		'epic',
 		'unimaginable',
 		'colossal',
@@ -295,10 +291,10 @@ bs.bullshitWords = {
 		'astonishing',
 		'incredible',
 		'breathtaking',
-		'staggering',
+		'staggering'
 	],
 
-  adjWith: [
+'adjWith' : [
 		'aglow with',
 		'buzzing with',
 		'beaming with',
@@ -306,17 +302,17 @@ bs.bullshitWords = {
 		'overflowing with',
 		'radiating',
 		'bursting with',
-		'electrified with',
+		'electrified with'
 	],
 
-  adjPrefix: [
+'adjPrefix' : [
 		'ultra-',
 		'supra-',
 		'hyper-',
-		'pseudo-',
+		'pseudo-'
 	],
 
-  vtMass: [
+'vtMass' : [
 		'inspire',
 		'integrate',
 		'ignite',
@@ -333,10 +329,10 @@ bs.bullshitWords = {
 		'spark',
 		'reveal',
 		'generate',
-		'leverage',
+		'leverage'
 	],
 
-  vtPerson: [
+'vtPerson' : [
 		'enlighten',
 		'inspire',
 		'empower',
@@ -351,10 +347,10 @@ bs.bullshitWords = {
 		'synergize',
 		'ground',
 		'bless',
-		'beckon',
+		'beckon'
 	],
 
-  viPerson: [
+'viPerson' : [
 		'exist',
 		'believe',
 		'grow',
@@ -363,10 +359,10 @@ bs.bullshitWords = {
 		'reflect',
 		'heal',
 		'vibrate',
-		'self-actualize',
+		'self-actualize'
 	],
 
-  vtDestroy: [
+'vtDestroy' : [
 		'destroy',
 		'eliminate',
 		'shatter',
@@ -377,10 +373,10 @@ bs.bullshitWords = {
 		'eradicate',
 		'extinguish',
 		'erase',
-		'confront',
+		'confront'
 	],
 
-  nTheXOf: [
+'nTheXOf' : [
 		'richness',
 		'truth',
 		'growth',
@@ -388,29 +384,29 @@ bs.bullshitWords = {
 		'healing',
 		'knowledge',
 		'birth',
-		'deeper meaning',
+		'deeper meaning'
 	],
 
-  ppPerson: [
+'ppPerson' : [
 		'awakened',
 		're-energized',
 		'recreated',
 		'reborn',
 		'guided',
-		'aligned',
+		'aligned'
 	],
 
-  ppThingPrep: [
+'ppThingPrep' : [
 		'enveloped in',
 		'transformed into',
 		'nurtured by',
 		'opened by',
 		'immersed in',
 		'engulfed in',
-		'baptized in',
+		'baptized in'
 	],
 
-  fixedAdvP: [
+'fixedAdvP' : [
 		'through non-local interactions',
 		'inherent in nature',
 		'at the quantum level',
@@ -418,17 +414,17 @@ bs.bullshitWords = {
 		'of unfathomable proportions',
 		'on a cosmic scale',
 		'devoid of self',
-		'of the creative act',
+		'of the creative act'
 	],
 
-  fixedAdvPPlace: [
+'fixedAdvPPlace' : [
 		'in this dimension',
 		'outside time',
 		'within the Godhead',
-		'at home in the cosmos',
+		'at home in the cosmos'
 	],
 
-  fixedNP: [
+'fixedNP' : [
 		'expanding wave functions',
 		'superpositions of possibilities',
 		'electromagnetic forces',
@@ -457,7 +453,7 @@ bs.bullshitWords = {
 		'psionic wave oscillations'
 	],
 
-  nSubject: [
+'nSubject' : [
 		'alternative medicine',
 		'astrology',
 		'tarot',
@@ -481,21 +477,19 @@ bs.bullshitWords = {
 		'breathwork'
 	],
 
-  vOpenUp: [
-		// 'open up',
+'vOpenUp' : [
 		'give us access to',
 		'enable us to access',
 		'remove the barriers to',
 		'clear a path toward',
 		'let us access',
-		// 'tap into',
 		'align us with',
 		'amplify our connection to',
 		'become our stepping-stone to',
-		'be a gateway to',
+		'be a gateway to'
 	],
 
-  vTraverse: [
+'vTraverse' : [
 		'traverse',
 		'walk',
 		'follow',
@@ -504,18 +498,18 @@ bs.bullshitWords = {
 		'roam',
 		'navigate',
 		'wander',
-		'embark on',
+		'embark on'
 	],
 
-	nameOfGod: [
+'nameOfGod' : [
 		'Gaia',
 		'Shiva',
 		'Parvati',
 		'the Goddess',
-		'Shakti',
+		'Shakti'
 	],
 
-	nBenefits: [
+'nBenefits' : [
 		'improved focus',
 		'improved concentration',
 		'extreme performance',
@@ -524,24 +518,24 @@ bs.bullshitWords = {
 		'an enhanced sexual drive',
 		'improved hydration',
 		'psychic rejuvenation',
-		'a healthier relationship with the Self',
+		'a healthier relationship with the Self'
 	],
 
-	adjProduct: [
+'adjProduct' : [
 		'alkaline',
 		'quantum',
 		'holographic',
 		'zero-point energy',
-		'“living”',
+		'"living"',
 		'metaholistic',
 		'ultraviolet',
 		'ozonized',
 		'ion-charged',
 		'hexagonal-cell',
-		'organic',
+		'organic'
 	],
 
-	nProduct: [
+'nProduct' : [
 		'water',
 		'healing crystals',
 		'Tibetan singing bowls',
@@ -556,14 +550,6 @@ bs.bullshitWords = {
 		'tofu',
 		'massage oil',
 		'herbal incense',
-		'cheesecloth tunics',
-	],
-
-};
-
-
-
-
-
-
-
+		'cheesecloth tunics'
+	]
+}
