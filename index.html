@@ -1,148 +1,241 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- jquery-modal -->
+    <link
+      rel="stylesheet"
+      href="jquery.modal.min.css"
+      type="text/css"
+      media="screen"
+    />
 
-<head>
+    <title>New-Age Bullshit Generator</title>
 
-  <link rel="shortcut icon" href="favicon.ico" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- jquery-modal -->
-  <link rel="stylesheet" href="jquery.modal.min.css" type="text/css" media="screen" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="New Age Bullshit Generator" />
+    <meta
+      name="twitter:description"
+      content="We are in the midst of a cosmic flowering of synchronicity that will remove the barriers to the dreamscape itself."
+    />
+    <meta
+      name="twitter:image:src"
+      content="http://sebpearce.com/bullshit/bullshit_twitter.png"
+    />
+    <meta name="twitter:domain" content="sebpearce.com" />
 
-  <title>New-Age Bullshit Generator</title>
+    <!-- social media stuff -->
+    <link rel="image_src" href="" />
+    <meta property="og:title" content="New Age Bullshit Generator" />
+    <meta
+      property="og:image"
+      content="http://sebpearce.com/bullshit/bullshit_screenshot.png"
+    />
+    <meta property="og:url" content="http://sebpearce.com/bullshit/" />
+    <meta property="og:site_name" content="sebpearce.com" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="We are in the midst of a cosmic flowering of synchronicity that will remove the barriers to the dreamscape itself."
+    />
+    <meta property="fb:admins" content="673372761" />
+    <meta property="fb:app_id" content="1484271161787269" />
+  </head>
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="New Age Bullshit Generator">
-  <meta name="twitter:description" content="We are in the midst of a cosmic flowering of synchronicity that will remove the barriers to the dreamscape itself.">
-  <meta name="twitter:image:src" content="http://sebpearce.com/bullshit/bullshit_twitter.png">
-  <meta name="twitter:domain" content="sebpearce.com">
+  <body>
+    <!-- FB like button -->
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          "//connect.facebook.net/en_US/all.js#xfbml=1&appId=611704965575973";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
 
-   <!-- social media stuff -->
-  <link rel="image_src" href="">
-  <meta property="og:title" content="New Age Bullshit Generator">
-  <meta property="og:image" content="http://sebpearce.com/bullshit/bullshit_screenshot.png">
-  <meta property="og:url" content="http://sebpearce.com/bullshit/">
-  <meta property="og:site_name" content="sebpearce.com">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="We are in the midst of a cosmic flowering of synchronicity that will remove the barriers to the dreamscape itself.">
-  <meta property="fb:admins" content="673372761" />
-  <meta property="fb:app_id" content="1484271161787269" />
+    <!-- Twitter button -->
+    <script>
+      !(function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "twitter-wjs");
+    </script>
 
-</head>
+    <div class="page-flash"></div>
 
-<body>
-<!-- FB like button -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=611704965575973";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Twitter button -->
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-  <div class="page-flash"></div>
-
-  <div id="donation-modal" class="donation-modal">
-    <p>Bitcoin donations of any amount are very much appreciated and will go toward bullshit.</p>
-    <p class="bitcoin-address">1MUhqnSK3XsEa4j3u5Y3HZpJH21Q8G81xr</p>
-    <div class="qr-code">
-      <img src="qr-code.png" alt="QR code" />
+    <div id="donation-modal" class="donation-modal">
+      <p>
+        Bitcoin donations of any amount are very much appreciated and will go
+        toward bullshit.
+      </p>
+      <p class="bitcoin-address">1MUhqnSK3XsEa4j3u5Y3HZpJH21Q8G81xr</p>
+      <div class="qr-code">
+        <img src="qr-code.png" alt="QR code" />
+      </div>
     </div>
-  </div>
 
-  <div class="links-left">
-    <div style="float:left">
-      <div class="fb-share-button" data-href="http://sebpearce.com/bullshit/" data-type="button_count"></div>
+    <div class="links-left">
+      <div style="float:left">
+        <div
+          class="fb-share-button"
+          data-href="http://sebpearce.com/bullshit/"
+          data-type="button_count"
+        ></div>
+      </div>
+      <div style="float:left">
+        <a
+          href="https://twitter.com/share"
+          class="twitter-share-button"
+          data-lang="en"
+          data-count="button"
+          data-url="http://sebpearce.com/bullshit/"
+          data-text="New Age Bullshit Generator"
+          data-hashtags=""
+          >Tweet</a
+        >
+      </div>
     </div>
-    <div style="float:left">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="button" data-url="http://sebpearce.com/bullshit/" data-text="New Age Bullshit Generator" data-hashtags="">Tweet</a>
+    <div class="links-right">
+      <a href="#donation-modal" class="donation-link" id="donation-link">
+        Donate bitcoin
+      </a>
     </div>
-  </div>
-  <div class="links-right">
-    <a href="#donation-modal" class="donation-link" id="donation-link">
-      Donate bitcoin
-    </a>
-  </div>
-  <div style="clear: both;"></div>
+    <div style="clear: both;"></div>
 
-  <div class="topbar">
-    <button class="glowjump">Reionize electrons</button>
-  </div>
+    <div class="topbar">
+      <button class="glowjump">Reionize electrons</button>
+    </div>
 
-  <div class="master">
-
+    <div class="master">
       <h1 id="main-heading">New Age Bullshit Generator</h1>
 
-      <h2 id="sub-heading">Namaste. Do you want to sell a New Age product and/or service? Tired of coming up with meaningless copy for your starry-eyed customers? Want to join the ranks of bestselling self-help authors? We can help.</h2>
+      <h2 id="sub-heading">
+        Namaste. Do you want to sell a New Age product and/or service? Tired of
+        coming up with meaningless copy for your starry-eyed customers? Want to
+        join the ranks of bestselling self-help authors? We can help.
+      </h2>
 
       <h3 id="third-heading">Just click and the truth will manifest</h3>
 
-      <p class="bs-paragraph">Click the <em>Reionize electrons</em> button at the top of the page to generate a full page of New Age poppycock.</p>
+      <p class="bs-paragraph">
+        Click the <em>Reionize electrons</em> button at the top of the page to
+        generate a full page of New Age poppycock.
+      </p>
 
-      <img class="nature-image" id="nature-image" src="http://placeimg.com/640/480/nature" />
+      <img
+        class="nature-image"
+        id="nature-image"
+        src="http://placeimg.com/640/480/nature"
+      />
 
-      <p class="bs-paragraph">The inspiration for this idea came from watching philosophy debates involving Deepak Chopra. I wrote a <a href="http://sebpearce.com/blog/bullshit">blog post about it</a> if you're interested.</p>
+      <p class="bs-paragraph">
+        The inspiration for this idea came from watching philosophy debates
+        involving Deepak Chopra.
+      </p>
 
-      <p class="bs-paragraph">After sitting through hours of New Age rhetoric, I decided to have a crack at writing code to generate it automatically and speed things up a bit. I cobbled together a list of New Age buzzwords and cliché sentence patterns and this is the result.</p>
+      <p class="bs-paragraph">
+        After sitting through hours of New Age rhetoric, I decided to have a
+        crack at writing code to generate it automatically and speed things up a
+        bit. I cobbled together a list of New Age buzzwords and cliché sentence
+        patterns and this is the result.
+      </p>
 
       <blockquote id="quote">
         You’ll get some profound-sounding nonsense here, too.
       </blockquote>
 
-      <p class="bs-paragraph">So, what is this for? Put it on your website as placeholder text. Print it out as a speech for your yoga class and see if anyone can guess a computer wrote it. Use it to write the hottest new bestseller in the self-help section, or give false hope to depressed friends and family members.</p>
-
-      <p class="bs-paragraph">(If you haven’t seen it, check out <a href="http://www.wisdomofchopra.com/">wisdomofchopra.com</a> &mdash; unfortunately they beat me to it! I came across that page a few days after I’d finished the vocabulary list for this one. Must be synchronicity at work.)</p>
-
-      <p id="nabg-bot-paragraph"><em>(NEW: Want to bring more love and light to your Twitter space? Follow Charlton Trezevant’s <a href="https://twitter.com/nabgbot">@nabgbot</a> and have the BS tweeted to you!)</em></p>
+      <p class="bs-paragraph">
+        So, what is this for? Put it on your website as placeholder text. Print
+        it out as a speech for your yoga class and see if anyone can guess a
+        computer wrote it. Use it to write the hottest new bestseller in the
+        self-help section, or give false hope to depressed friends and family
+        members.
+      </p>
       <div style="clear: both;"></div>
-  </div>
-  &nbsp;
+    </div>
+    &nbsp;
 
-  <div class="comments">
-
+    <div class="comments">
       <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-        var disqus_shortname = 'sebpearce';
-        var disqus_identifier = 'bullshit';
-        var disqus_url = 'http://sebpearce.com/bullshit/';
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = "sebpearce";
+        var disqus_identifier = "bullshit";
+        var disqus_url = "http://sebpearce.com/bullshit/";
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          var dsq = document.createElement("script");
+          dsq.type = "text/javascript";
+          dsq.async = true;
+          dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+          (
+            document.getElementsByTagName("head")[0] ||
+            document.getElementsByTagName("body")[0]
+          ).appendChild(dsq);
         })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </script>
+      <noscript
+        >Please enable JavaScript to view the
+        <a href="http://disqus.com/?ref_noscript"
+          >comments powered by Disqus.</a
+        ></noscript
+      >
+      <a href="http://disqus.com" class="dsq-brlink"
+        >comments powered by <span class="logo-disqus">Disqus</span></a
+      >
+    </div>
 
-  </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script
+      src="jquery.modal.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="main.js"></script>
+    <script src="vocab.js"></script>
+    <script src="patterns.js"></script>
 
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="main.js"></script>
-  <script src="vocab.js"></script>
-  <script src="patterns.js"></script>
-
-  <!-- Google Analytics -->
+    <!-- Google Analytics -->
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-48318340-1', 'sebpearce.com');
-  ga('send', 'pageview');
-  </script>
-
-</body>
-
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-48318340-1", "sebpearce.com");
+      ga("send", "pageview");
+    </script>
+  </body>
 </html>
