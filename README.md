@@ -20,5 +20,3 @@ It then fills each heading and paragraph of the page with a certain number of se
 It avoids duplicate sentences by making a copy of the entire pattern array found in `patterns.js` at the start and removing each sentence as it is used.
 
 The pretty picture comes from [placeimg.com](http://placeimg.com), which generates a random image each time something visits its URL.
-
-You can read about the background and aftermath [here](http://sebpearce.com/blog/bullshit/).
