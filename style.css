@@ -110,30 +110,6 @@ a:hover {
   color: #b8cce0;
 }
 
-.links-left,
-.links-right {
-  position: absolute;
-  top: 15px;
-  text-align: center;
-  z-index: 50;
-}
-
-.links-left {
-  left: 10px;
-}
-
-.links-right {
-  right: 10px;
-}
-
-.fb-share-button {
-  vertical-align: top;
-}
-
-.twitter-share-button {
-  margin-left: 10px;
-}
-
 .topbar {
   z-index: 40;
   position: absolute;
@@ -344,18 +320,6 @@ a:hover {
     -o-border-radius: 0;
     border-radius: 0;
     margin: 100px 0 0 0;
-    width: 100%;
-  }
-
-  .topbar {
-    height: 100px;
-  }
-
-  .topbar button {
-    margin-top: 35px;
-  }
-
-  .links-left {
     width: 100%;
   }
 
