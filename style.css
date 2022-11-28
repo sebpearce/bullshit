@@ -111,13 +111,13 @@ a:hover {
 }
 
 .topbar {
-  z-index: 40;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 65px;
   width: 100%;
   padding: 10px;
+  margin-bottom: 10px;
   background: rgba(0, 0, 0, 0.3);
   color: rgba(255, 255, 255, 0.4);
   text-align: center;
@@ -126,7 +126,6 @@ a:hover {
 .topbar button {
   height: 45px;
   width: 200px;
-  outline: none;
   border: 3px solid #476685;
   background: #0d1a26;
   color: #a3ccf5;
@@ -138,6 +137,7 @@ a:hover {
   -ms-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .topbar button:active {
   background: #264d73;
@@ -237,7 +237,7 @@ a:hover {
 }
 .master {
   max-width: 768px;
-  margin: 80px 50px 20px 50px;
+  margin: 0px 50px 20px 50px;
   padding: 50px;
   background-color: rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
@@ -307,8 +307,12 @@ a:hover {
     height: auto;
   }
 
+  .topbar {
+    margin-bottom: 0;
+  }
+
   .master {
-    padding: 4%;
+    padding: 2rem;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -ms-box-shadow: none;
@@ -319,7 +323,7 @@ a:hover {
     -ms-border-radius: 0;
     -o-border-radius: 0;
     border-radius: 0;
-    margin: 100px 0 0 0;
+    margin: 0;
     width: 100%;
   }
 
@@ -366,7 +370,7 @@ a:hover {
   }
 
   .master {
-    margin: 80px auto 20px auto;
+    margin: 0px auto 20px auto;
   }
 
   .comments {
