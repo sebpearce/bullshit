@@ -25,7 +25,7 @@ bs.sentencePatterns = [
     "The nCosmos is adjWith fixedNP.",
     "To vTraverse the nPath is to become one with it.",
     "Today, science tells us that the essence of nature is nMass.",
-    "nMass requires exploration."
+    "nMass requires exploration.",
   ],
 
   // warnings
@@ -39,7 +39,7 @@ bs.sentencePatterns = [
     "You may be ruled by nMassBad without realizing it. Do not let it vtDestroy the nTheXOf of your nPath.",
     "The complexity of the present time seems to demand a ing of our nOurPlural if we are going to survive.",
     "nMassBad is born in the gap where nMass has been excluded.",
-    "Where there is nMassBad, nMass cannot thrive."
+    "Where there is nMassBad, nMass cannot thrive.",
   ],
 
   // future hope
@@ -57,7 +57,7 @@ bs.sentencePatterns = [
     "We are being called to explore the nCosmos itself as an interface between nMass and nMass.",
     "It is in ing that we are ppPerson.",
     "The nCosmos is approaching a tipping point.",
-    "nameOfGod will vOpenUp adj nMass."
+    "nameOfGod will vOpenUp adj nMass.",
   ],
 
   // you and your problems
@@ -68,7 +68,7 @@ bs.sentencePatterns = [
     "How should you navigate this adj nCosmos?",
     "It can be difficult to know where to begin.",
     "If you have never experienced this nOf fixedAdvP, it can be difficult to viPerson.",
-    "The nCosmos is calling to you via fixedNP. Can you hear it?"
+    "The nCosmos is calling to you via fixedNP. Can you hear it?",
   ],
 
   // history
@@ -79,8 +79,8 @@ bs.sentencePatterns = [
     "Humankind has nothing to lose.",
     "We are in the midst of a adj ing of nMass that will vOpenUp the nCosmos itself.",
     "Who are we? Where on the great nPath will we be ppPerson?",
-    "We are at a crossroads of nMass and nMassBad."
-  ]
+    "We are at a crossroads of nMass and nMassBad.",
+  ],
 
   // selling point
   // [
@@ -91,7 +91,7 @@ bs.sentencePatterns = [
   //   'This is the vision behind our 100% adjProduct, adjProduct nProduct.',
   //   'With our adjProduct nProduct, nBenefits is only the beginning.',
   // ],
-];
+]
 
 /*
 
