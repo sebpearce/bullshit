@@ -157,12 +157,6 @@ $(" .topbar button ").hover(function() {
   $(this).removeClass("glowjump");
 });
 
-$("#donation-link").on("click", function(e) {
-  $("#donation-modal").modal({
-    fadeDuration: 100
-  });
-});
-
 // Page interaction
 $(" .topbar button ").click(function() {
   $(" .page-flash ")
