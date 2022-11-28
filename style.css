@@ -1,8 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:300,300italic);
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,700);
-/* apply a natural box layout model to all elements */
+@font-face {
+  font-family: "Merriweather";
+  src: url("Merriweather-LightItalic-latin.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("Oswald-Regular-latin.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Orbitron";
+  src: url("Orbitron-Bold-latin.woff2") format("woff2");
+  font-display: swap;
+}
+
 *,
 *:before,
 *:after {
@@ -20,7 +31,9 @@ body {
   background: url("bg.png");
   width: 100%;
   color: #cdcdcd;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
 }
 
 .page-flash {
@@ -35,7 +48,7 @@ body {
 }
 
 h1 {
-  font: 34px "Orbitron", sans-serif;
+  font: 34px "Orbitron";
   color: white;
   margin-bottom: 0.7em;
   line-height: 130%;
@@ -43,20 +56,19 @@ h1 {
 
 h2 {
   font: 22px "Merriweather", serif;
-  font-style: italic;
   color: #d9d9d9;
   margin-bottom: 1.5em;
   line-height: 150%;
 }
 
 h3 {
-  font: 26px "Oswald", sans-serif;
+  font: 26px "Oswald";
   color: white;
   margin-bottom: 0.7em;
 }
 
 p {
-  font: 20px "Open Sans", serif;
+  font-size: 1.25rem;
   line-height: 150%;
   margin: 1em 0;
 }
@@ -79,7 +91,6 @@ em {
   display: block;
   float: left;
   font: 24px "Merriweather", serif;
-  font-style: italic;
   text-align: center;
   color: #e6e6e6;
 }
@@ -110,7 +121,7 @@ a:hover {
   border: 3px solid #476685;
   background: #0d1a26;
   color: #a3ccf5;
-  font: 16px "Oswald", sans-serif;
+  font: 16px "Oswald";
   text-transform: uppercase;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
@@ -154,7 +165,6 @@ a:hover {
 
 .comments blockquote {
   font-style: italic;
-  font-weight: semibold;
 }
 
 .comments figcaption {
@@ -179,7 +189,7 @@ a:hover {
   padding: 0.75rem 1rem;
   color: white;
   border-radius: 8px;
-  font-family: Oswald;
+  font-family: "Oswald";
   cursor: pointer;
 }
 
