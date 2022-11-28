@@ -186,7 +186,7 @@ $(" .topbar button ").click(function() {
         $(this)
           .attr(
             "src",
-            "http://placeimg.com/640/480/nature?" +
+            "https://placeimg.com/640/480/nature?" +
               Math.floor(Math.random() * 100)
           )
           .bind("onreadystatechange load", function() {

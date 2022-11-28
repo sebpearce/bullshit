@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Orbitron:700);
-@import url(http://fonts.googleapis.com/css?family=Merriweather:300,300italic);
-@import url(http://fonts.googleapis.com/css?family=Oswald);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300,300italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,700);
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
   -moz-box-sizing: border-box;

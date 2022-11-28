@@ -1,7 +1,7 @@
 New Age Bullshit Generator
 ==========================
 
-[Live demo](http://sebpearce.com/bullshit)
+[Live demo](https://sebpearce.com/bullshit)
 
 Does what it says on the box :) Written in JS, using jQuery.
 
@@ -19,4 +19,4 @@ It then fills each heading and paragraph of the page with a certain number of se
 
 It avoids duplicate sentences by making a copy of the entire pattern array found in `patterns.js` at the start and removing each sentence as it is used.
 
-The pretty picture comes from [placeimg.com](http://placeimg.com), which generates a random image each time something visits its URL.
+The pretty picture comes from [placeimg.com](https://placeimg.com), which generates a random image each time something visits its URL.
