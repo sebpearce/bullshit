@@ -6,7 +6,6 @@
 
 $base-hue: 210;
 $background-gradient: linear-gradient(hsla($base-hue,50%,70%,0.6) 0%, hsla(0,0%,0%,0.5) 100%);
-$background-gradient-modal: linear-gradient(hsl($base-hue,40%,20%) 0%, hsl(0,0%,0%) 100%);
 $base-font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $main-heading-font: 34px 'Orbitron', sans-serif;
 $sub-heading-font: 22px 'Merriweather', serif;
@@ -160,73 +159,6 @@ a {
   margin-left: 10px;
 }
 
-.donation-link {
-  position: relative;
-  display: block;
-  float: left;
-  margin-left: 10px;
-  background: #222;
-  color: #fff;
-  padding: 3px 6px 3px 18px;
-  border-radius: 3px;
-  font-weight: 600;
-  font-size: 12px;
-  border: 1px solid #ef9e5b;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 3px;
-    top: 2px;
-    background: url('bitcoin.svg');
-    background-size: cover;
-    width: 13px;
-    height: 13px;
-  }
-
-  &:hover {
-    background: hsl($base-hue, 50%, 50%);
-    color: #fff;
-    border-color: #fff;
-  }
-
-  &:active {
-    top: 1px;
-  }
-}
-
-.donation-modal {
-  display: none;
-  font-size: 21px;
-  // background: hsl(210,50%,17%) !important;
-  background: $background-gradient-modal !important;
-  line-height: 1.5;
-  padding: 2em !important;
-  box-shadow: 0 0 55px 5px hsla(0,0%,100%,0.3) !important;
-  border: 4px solid #000 !important;
-  border-radius: 20px !important;
-
-  p {
-    color: #fff;
-    text-align: center;
-    margin: 0 0 1.5em;
-  }
-
-  .bitcoin-address {
-    font-weight: 600;
-  }
-
-  .qr-code {
-    text-align: center;
-  }
-
-  img {
-    width: auto;
-    height: auto;
-  }
-}
-
 .topbar {
   z-index: 40;
   position: absolute;
@@ -351,11 +283,6 @@ a {
     @include vendor-prefixes(border-radius, 0);
     margin: 100px 0 0 0;
     width: 100%;
-  }
-
-  .donation-modal .bitcoin-address {
-    word-break: break-all;
-    font-size: 0.8em;
   }
 
   .topbar {
