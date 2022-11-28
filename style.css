@@ -203,6 +203,11 @@ a:hover {
   margin-top: 2rem;
 }
 
+.updated-date {
+  color: #888;
+  margin-left: 0.5rem;
+}
+
 @media screen and (min-width: 768px) {
   body::before {
     content: "";
