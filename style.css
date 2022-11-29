@@ -14,26 +14,72 @@
   font-display: swap;
 }
 
+/* ===================================================== */
+
+/*
+  Modified from Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
-html {
+* {
+  margin: 0;
+}
+html,
+body {
   height: 100%;
 }
+body {
+  line-height: 1.5;
+  /* -webkit-font-smoothing: antialiased; */
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ===================================================== */
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
   background: url("bg.png");
-  width: 100%;
   color: #cdcdcd;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
     sans-serif;
+}
+
+body::before {
+  content: "";
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(140, 179, 217, 0.4) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .page-flash {
@@ -47,52 +93,84 @@ body {
   z-index: 30;
 }
 
-h1 {
-  font: 34px "Orbitron";
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  flex-basis: 4.75rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #0005;
+}
+
+.reionize {
+  border: 3px solid #476685;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background: #0d1a26;
+  color: #a3ccf5;
+  font: 1rem "Oswald";
+  text-transform: uppercase;
+  box-shadow: 0px 5px 15px #0007;
+  cursor: pointer;
+  transition: transform 0.1s, color 0.2s, border-color 0.2s, box-shadow 0.5s;
+}
+
+.glowjump {
+  animation: glow-jump 0.4s ease 3s 2 alternate;
+}
+
+.panels-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.panel > *:first-child {
+  margin-top: 0;
+}
+
+.panel > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Bullshit panel */
+
+.bullshit {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  background-color: #0009;
+}
+
+h1,
+h2,
+h3,
+h4 {
   color: white;
-  margin-bottom: 0.7em;
-  line-height: 130%;
+  margin: 1.5rem 0;
+}
+
+h1 {
+  font: 2.125rem/1.35 "Orbitron";
 }
 
 h2 {
-  font: 22px "Merriweather", serif;
-  color: #d9d9d9;
-  margin-bottom: 1.5em;
-  line-height: 150%;
+  font: 1.375rem/1.75 "Merriweather", serif;
 }
 
 h3 {
-  font: 26px "Oswald";
-  color: white;
-  margin-bottom: 0.7em;
+  font: 1.625rem/1.5 "Oswald";
 }
 
 p {
-  font-size: 1.25rem;
-  line-height: 150%;
-  margin: 1em 0;
-}
-
-em {
-  font-weight: bold;
-}
-
-.nature-image {
-  display: block;
-  height: 240px;
-  width: 100%;
-  margin: 0 auto;
-  object-fit: cover;
-}
-
-.quote {
-  padding: 0 20px 10px 0;
-  max-width: 250px;
-  display: block;
-  float: left;
-  font: 24px "Merriweather", serif;
-  text-align: center;
-  color: #e6e6e6;
+  margin: 1.5rem 0;
 }
 
 a {
@@ -101,66 +179,46 @@ a {
 }
 
 a:hover {
-  color: #b8cce0;
+  text-decoration: underline;
 }
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 65px;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  color: rgba(255, 255, 255, 0.4);
+.bs-paragraph {
+  font-size: 1.3rem;
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-family: "Merriweather";
+  color: white;
   text-align: center;
 }
 
-.topbar button {
-  height: 45px;
-  width: 200px;
-  border: 3px solid #476685;
-  background: #0d1a26;
-  color: #a3ccf5;
-  font: 16px "Oswald";
-  text-transform: uppercase;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-.topbar button:active {
-  background: #264d73;
-  color: black;
-  border-color: black;
+.nature-image {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  margin: 2rem 0;
 }
 
-.master {
-  margin: 0;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.6);
-}
+/* Comments panel */
 
 .comments {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
   font-family: Verdana;
   background: #111416;
-  font-size: 1rem;
-  line-height: 1.5;
-  padding: 2rem;
 }
 
-.comments p {
-  font-family: Verdana;
-  font-size: 1rem;
+.comment-picks {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  gap: 2rem;
 }
 
 .comments figure {
-  padding: 0 2rem 0 1rem;
-  border-left: 4px solid #333;
   max-width: 35rem;
   color: #fff;
-}
-
-.comments h3 {
-  margin-bottom: 2rem;
 }
 
 .comments blockquote {
@@ -174,13 +232,6 @@ a:hover {
 
 .comments figcaption::before {
   content: "— ";
-}
-
-.comment-picks {
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .comments button {
@@ -197,89 +248,69 @@ a:hover {
   border-color: #ccc;
 }
 
+.updated-date {
+  color: #888;
+}
+
 .scroll-button {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
 
-.updated-date {
-  color: #888;
-  margin-left: 0.5rem;
-}
-
 @media screen and (min-width: 768px) {
   body::before {
-    content: "";
-    z-index: -1;
-    position: fixed;
-    background: none;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-    left: 0;
     background: linear-gradient(
       rgba(140, 179, 217, 0.6) 0%,
       rgba(0, 0, 0, 0.5) 100%
     );
   }
 
-  .content-container {
-    padding: 0 1rem;
-  }
-
-  .master {
-    max-width: 768px;
-    margin: 0px auto 20px;
-    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
-    border-radius: 30px;
-    padding: 3rem;
-  }
-
-  .comments {
-    border-radius: 30px;
-    max-width: 768px;
-    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
-    margin: 0 auto 3rem auto;
-    padding: 3rem;
-  }
-
-  .nature-image {
-    max-width: 320px;
-    height: 240px;
-    float: right;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-  }
-
-  .topbar {
-    margin-bottom: 10px;
-  }
-
-  .topbar button {
-    transition: transform 0.1s, color 0.2s, border-color 0.2s, box-shadow 0.5s;
-  }
-  .topbar button:hover {
+  .reionize:hover {
     transform: scale(1.2);
     color: white;
     border-color: #ccc;
     animation: pulse 0.3s linear 0s infinite alternate;
     box-shadow: 0px 0px 55px 5px white;
   }
-  .topbar button:active {
+
+  .reionize:active {
     transition: transform 0s, border-color 0s, background 0s, box-shadow 0.5s;
     animation: 0;
     transform: scale(1.1);
   }
 
-  .glowjump {
-    animation: glow_jump 0.4s ease 3s 2 alternate;
+  .panels-container {
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .comments figure {
+    padding: 0 2rem 0 1rem;
+    border-left: 4px solid #333;
+  }
+
+  .panel {
+    max-width: 768px;
+    padding: 4rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
+  }
+
+  .comments {
+    margin-bottom: 2rem;
+  }
+
+  .nature-image {
+    width: 20rem;
+    float: right;
+    margin: 0 0 1rem 2rem;
+    transform: translateY(0.5rem);
   }
 }
 
-@keyframes glow_jump {
+@keyframes glow-jump {
   from {
     transform: scale(1);
     box-shadow: 0px 0px 55px 5px rgba(158, 204, 250, 0.9);
@@ -288,7 +319,7 @@ a:hover {
     transform: scale(1.3);
     box-shadow: 0px 0px 55px 10px white;
     color: white;
-    border-color: #ccc;
+    border-color: rgb(206, 177, 177);
   }
 }
 
