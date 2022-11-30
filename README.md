@@ -3,7 +3,7 @@ New Age Bullshit Generator
 
 [Live demo](https://sebpearce.com/bullshit)
 
-Does what it says on the box :) Written in JS, using jQuery.
+Does what it says on the tin :)
 
 The main script (`main.js`) relies on two lists of words called `patterns.js`, which is a stock of sentence patterns made up of fixed words and variable words, and `vocab.js`, which contains these variable words.
 
