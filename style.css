@@ -102,10 +102,15 @@ body::before {
   opacity: 0;
 }
 
+.fade-text.hide,
+.nature-image.hide {
+  transform: translateY(3rem);
+}
+
 .fade-text.show,
 .page-flash.hide,
 .nature-image.show {
-  transition: opacity 2s linear;
+  transition: opacity 2s linear, transform 1s ease-out;
 }
 
 .content {
