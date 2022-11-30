@@ -64,6 +64,7 @@ h6 {
 
 body {
   background: url("bg.png");
+  background-attachment: fixed;
   color: #cdcdcd;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
