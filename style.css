@@ -83,7 +83,7 @@ body::before {
 }
 
 .page-flash {
-  display: none;
+  pointer-events: none;
   position: absolute;
   background: #000;
   top: 0;
@@ -91,6 +91,19 @@ body::before {
   right: 0;
   bottom: 0;
   z-index: 30;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.page-flash.hide,
+.nature-image.show {
+  transition: opacity 2s linear;
 }
 
 .content {
