@@ -141,6 +141,8 @@ const bs = {
   },
 }
 
+const timeouts = []
+
 const reionizeBtn = document.querySelector(".reionize")
 const pageFlash = document.querySelector(".page-flash")
 const mainHeading = document.querySelector("#main-heading")
@@ -149,12 +151,19 @@ const thirdHeading = document.querySelector("#third-heading")
 const quote = document.querySelector(".quote")
 const natureImage = document.querySelector(".nature-image")
 const paragraphs = document.querySelectorAll(".bs-paragraph")
+const allText = document.querySelectorAll(".fade-text")
 
 function reionizeElectrons() {
   pageFlash.classList.replace("hide", "show")
+
+  // clear existing timeouts if button is pushed while last round is animating
+  timeouts.forEach((n) => window.clearTimeout(n))
+
   window.setTimeout(() => {
     pageFlash.classList.replace("show", "hide")
   }, 20)
+
+  allText.forEach((t) => t.classList.replace("show", "hide"))
 
   bs.initializeSentencePool()
 
@@ -192,6 +201,14 @@ function reionizeElectrons() {
     "https://placeimg.com/640/480/nature?" + Math.floor(Math.random() * 100)
 
   natureImage.setAttribute("src", imageUrl)
+
+  allText.forEach((t, i) => {
+    timeouts.push(
+      window.setTimeout(() => {
+        t.classList.replace("hide", "show")
+      }, i * 250 + 250)
+    )
+  })
 }
 
 reionizeBtn.onclick = reionizeElectrons

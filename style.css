@@ -102,6 +102,7 @@ body::before {
   opacity: 0;
 }
 
+.fade-text.show,
 .page-flash.hide,
 .nature-image.show {
   transition: opacity 2s linear;
