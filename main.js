@@ -149,9 +149,50 @@ const mainHeading = document.querySelector("#main-heading")
 const subHeading = document.querySelector("#sub-heading")
 const thirdHeading = document.querySelector("#third-heading")
 const quote = document.querySelector(".quote")
-const natureImage = document.querySelector(".nature-image")
+const newAgeImage = document.querySelector(".new-age-image")
 const paragraphs = document.querySelectorAll(".bs-paragraph")
 const allText = document.querySelectorAll(".fade-text")
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    let t = array[i]
+    array[i] = array[j]
+    array[j] = t
+  }
+}
+
+const images = [
+  "fantasy.jpg",
+  "forest.jpg",
+  "planet.jpg",
+  "pyramids.jpg",
+  "rocks.jpg",
+  "sacred-geometry.jpg",
+  "sea.jpg",
+  "spiritualism.jpg",
+  "stones.jpg",
+  "sunset-tree.jpg",
+  "thunderstorm.jpg",
+  "water.jpg",
+  "woman.jpg",
+]
+
+let currentImages = [...images]
+shuffle(currentImages)
+
+function loadImage() {
+  const imageUrl = "/bullshit/images/" + currentImages[0]
+
+  newAgeImage.setAttribute("src", imageUrl)
+
+  currentImages.shift()
+
+  if (currentImages.length === 0) {
+    currentImages = [...images]
+    shuffle(currentImages)
+  }
+}
 
 function reionizeElectrons() {
   pageFlash.classList.replace("hide", "show")
@@ -195,12 +236,7 @@ function reionizeElectrons() {
 
   quote.textContent = bs.generateText({ numberOfSentences: 1, topicIndex })
 
-  natureImage.classList.replace("show", "hide")
-
-  const imageUrl =
-    "https://placeimg.com/640/480/nature?" + Math.floor(Math.random() * 100)
-
-  natureImage.setAttribute("src", imageUrl)
+  newAgeImage.classList.replace("show", "hide")
 
   allText.forEach((t, i) => {
     timeouts.push(
@@ -209,13 +245,22 @@ function reionizeElectrons() {
       }, i * 250 + 250)
     )
   })
+
+  loadImage()
 }
 
-reionizeBtn.onclick = reionizeElectrons
-
-natureImage.onload = () => natureImage.classList.replace("hide", "show")
+reionizeBtn.addEventListener("click", reionizeElectrons)
 
 // cancel the button jump if user hovers on it mid-jump
 reionizeBtn.addEventListener("mouseenter", () =>
   reionizeBtn.classList.remove("glowjump")
 )
+
+newAgeImage.addEventListener("load", () => {
+  // Chromium seems to need this delay for its show transition to work
+  window.setTimeout(() => {
+    newAgeImage.classList.replace("hide", "show")
+  }, 5)
+})
+
+loadImage()

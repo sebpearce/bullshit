@@ -103,14 +103,18 @@ body::before {
 }
 
 .fade-text.hide,
-.nature-image.hide {
+.new-age-image.hide {
   transform: translateY(3rem);
 }
 
 .fade-text.show,
-.page-flash.hide,
-.nature-image.show {
+.page-flash.hide {
   transition: opacity 2s linear, transform 1s ease-out;
+}
+
+.new-age-image.show {
+  transition: opacity 2s cubic-bezier(0.53, 0, 1, 1), transform 1s ease-out;
+  transition-delay: 1s;
 }
 
 .content {
@@ -213,11 +217,12 @@ a:hover {
   text-align: center;
 }
 
-.nature-image {
+.new-age-image {
   width: 100%;
-  height: 15rem;
+  max-width: 424px;
+  height: 11.25rem;
   object-fit: cover;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 /* Comments panel */
@@ -226,7 +231,7 @@ a:hover {
   padding-top: 4rem;
   padding-bottom: 3rem;
   font-family: Verdana;
-  background: #111416;
+  background: #10181d;
 }
 
 .comment-picks {
@@ -322,7 +327,7 @@ a:hover {
     margin-bottom: 2rem;
   }
 
-  .nature-image {
+  .new-age-image {
     width: 20rem;
     float: right;
     margin: 0 0 1rem 2rem;
